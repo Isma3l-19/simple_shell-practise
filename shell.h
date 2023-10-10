@@ -9,4 +9,5 @@
 
 #define MAX_INPUT 1024
 
+void execute_command(char *input);
 #endif /* _SHELL_H */
