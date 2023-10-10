@@ -5,9 +5,11 @@
  */
 int main(void)
 {
-	char *input = NULL, prompt[] = "simple_shell$ ";
+	char prompt[] = "simple_shell$ ";
+	char *input = NULL;
 	size_t len = 0;
 	ssize_t read;
+	char error[] = "Error: \n";
 
 	while (1)
 	{
