@@ -1,11 +1,9 @@
 #include "shell.h"
 /**
  * main - Entry point for the simple shell program.
- *
  * This function implements a basic UNIX command line interpreter.
  * It reads user input, executes single-word commands, and displays
  * the results.
- *
  * Return: Always returns (0).
  */
 int main(void)
