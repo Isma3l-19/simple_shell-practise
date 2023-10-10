@@ -33,7 +33,3 @@ sed -i 's/while(/while (/g' $1
 sed -i 's/ \+ /\t/g' $1 # fix double space and more to tab
 
 echo -e ""
-<<<<<<< HEAD
-=======
-
->>>>>>> 698c025631f073f464ad83d40e10571a7ec49f3b
