@@ -9,6 +9,7 @@ void execute_command(char *input)
 	int status;
 	char error_message[] = "Error: Command exited to status 0\n";
 	char error_message_signal[] = "Error: Command terminated by signal 0\n";
+	char error[] = "Error: Command not found\n";
 
 	child_pid = fork();
 	if (child_pid == -1)
@@ -24,10 +25,12 @@ void execute_command(char *input)
 
 		args[0] = input;
 		args[1] = NULL;
-		execve(input, args, NULL);
+		if (execve(input, args, NULL) == -1)
+		{
+			write(STDERR_FILENO, error, sizeof(error) - 1);
+			exit(EXIT_FAILURE);
+		}
 		free(args);
-		write(STDERR_FILENO, error_message, sizeof(error_message) - 1);
-		exit(EXIT_FAILURE);
 	}
 	else
 	{
